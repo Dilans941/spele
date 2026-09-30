@@ -1,36 +1,6 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">  <!-- bez šī garumzīmes izskatīsies kā Ä« -->
-    <title>Mana spēle</title>
-</head>
-<body>
-    <header>
-        <h1>picas mednieks</h1>
-    </header>   <!-- aizvērts pirms nākamā bloka -->
-
-    <main>
-        <div id="menu">
-            <p>Spied <b>Sākt</b>, lai spēlētu.</p>
-            <!-- pareizi: <b> aizveras pirms </p>, nevis pēc tā -->
-        </div>
-
-        <div id="spele">
-            <ul>
-                <li>Savāc picu</li>
-                <li>Izvairies no asteroīdiem</li>
-            </ul>
-        </div>
-    </main>
-
-    <footer>
-        <p>Autors: dilans</p>
-    </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="lv">
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mana spēle</title>
@@ -44,17 +14,28 @@ img { max-width: 100%; height: auto; }
 </style>
 </head>
 <body>
-<h1>Divi spēles pogas varianti</h1>
-<section>
-  <h2>A variants</h2>
-  <button onclick="document.getElementById('atbilde').textContent='Spēle sākta!'">Spied šeit</button>
+<h1>Mana spēle</h1>
+<p>Savāc piecas zvaigznes.</p>
+<section id="sakums">
+  <h2>Sākuma ekrāns</h2>
+  <button onclick="paraditSpeli()">Sākt spēli</button>
 </section>
-<section>
-  <h2>B variants</h2>
-  <button onclick="document.getElementById('atbilde').textContent='Spēle sākta!'">Sākt spēli</button>
+<section id="laukums" hidden>
+  <h2>Spēles ekrāns</h2>
+  <p>Punkti: 0</p>
+  <p>Šeit vēlāk būs spēlētājs.</p>
+  <button onclick="paraditSakumu()">Atpakaļ</button>
 </section>
-<p id="atbilde">Izmēģini abas pogas.</p>
-<h2>Mana izvēle</h2>
-<p>Manai spēlei būs poga:</p>
+<script>
+// Gatavā palīdzība pogām. Šodien maini lapas tekstu un izvietojumu.
+function paraditSpeli() {
+  document.getElementById("sakums").hidden = true;
+  document.getElementById("laukums").hidden = false;
+}
+function paraditSakumu() {
+  document.getElementById("sakums").hidden = false;
+  document.getElementById("laukums").hidden = true;
+}
+</script>
 </body>
 </html>
